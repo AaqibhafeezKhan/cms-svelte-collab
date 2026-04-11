@@ -1,16 +1,36 @@
-const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
+const path = require('path');
 
 module.exports = {
+  entry: './src/main.js',
   output: {
-    publicPath: "http://localhost:9004/",
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'system',
   },
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "cmsSvelteCollab",
-      filename: "remoteEntry.js",
-      exposes: {
-        "./CollabEditor": "./src/App.svelte",
+  module: {
+    rules: [
+      {
+        test: /\.svelte$/,
+        use: {
+          loader: 'svelte-loader',
+          options: {
+            emitCss: true,
+          },
+        },
       },
-    }),
-  ],
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
+  devServer: {
+    port: 8083,
+    historyApiFallback: true,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+  },
+  externals: ["single-spa"],
 };
