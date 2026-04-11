@@ -1,12 +1,20 @@
-<script>
-  let messages = [
+<script lang="ts">
+  interface Message {
+    id: number;
+    user: string;
+    text: string;
+    time: string;
+    avatar: string;
+  }
+
+  let messages: Message[] = [
     { id: 1, user: 'Sarah', text: 'Hey, have you reviewed the new media assets?', time: '10:42 AM', avatar: 'S' },
     { id: 2, user: 'Mike', text: 'Just finishing up the editorial piece. Will check in 5.', time: '10:45 AM', avatar: 'M' },
     { id: 3, user: 'You', text: 'I updated the auth roles for the new team members.', time: '10:48 AM', avatar: 'A' },
   ];
-  let newMessage = "";
+  let newMessage: string = "";
 
-  function sendMessage() {
+  function sendMessage(): void {
     if (newMessage.trim()) {
       messages = [...messages, {
         id: Date.now(),
@@ -23,7 +31,7 @@
 <div class="animate-in">
   <header style="margin-bottom: 2rem;">
     <h2 class="vibrant-text" style="font-size: 2rem;">Collaboration Hub</h2>
-    <p style="color: var(--text-muted);">Real-time team communication and activity</p>
+    <p style="color: var(--text-muted);">Real-time team communication (Svelte + TS)</p>
   </header>
 
   <div class="card" style="display: flex; flex-direction: column; height: 500px; padding: 0;">
