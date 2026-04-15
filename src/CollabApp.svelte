@@ -59,9 +59,14 @@
 </script>
 
 <div class="animate-in">
-  <header style="margin-bottom: 2.5rem;">
-    <h2 style="font-size: 1.75rem; font-weight: 800; color: var(--primary);">Collaboration</h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem;">Real-time sync and team communication</p>
+  <header style="margin-bottom: 3.5rem; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--border); padding-bottom: 2rem;">
+    <div>
+      <h2 style="font-size: 2.5rem; font-weight: 900; color: var(--primary); letter-spacing: -0.04em; margin-bottom: 0.5rem;">Collaboration Hub</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem; font-weight: 500;">Real-time communication and team synchronization</p>
+    </div>
+    <div style="padding-bottom: 0.5rem;">
+      <span class="module-tag" style="background: #eef2ff; color: #4f46e5; border-color: #e0e7ff;">Svelte 3.0</span>
+    </div>
   </header>
 
   <div class="module-card" style="height: 600px; padding: 0; display: flex; flex-direction: column; background: var(--bg-main, white); border: 1px solid var(--border); box-shadow: var(--shadow-md);">
