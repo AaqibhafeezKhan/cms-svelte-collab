@@ -1,23 +1,32 @@
 {
   "name": "cms-svelte-collab",
   "version": "1.0.0",
-  "description": "Svelte microfrontend for real-time collaborative editing",
+  "description": "Svelte microfrontend for real-time collaborative editing and team communication",
+  "homepage": "https://AaqibhafeezKhan.github.io/cms-svelte-collab",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "svelte": "^3.38.0"
   },
   "devDependencies": {
-    "babel-loader": "^8.2.2",
+    "@babel/core": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
+    "@types/single-spa": "^5.0.0",
+    "babel-loader": "^8.4.1",
+    "css-loader": "^6.0.0",
+    "gh-pages": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^3.0.0",
+    "svelte-loader": "^3.1.0",
+    "svelte-preprocess": "^5.0.0",
+    "ts-loader": "^9.0.0",
+    "typescript": "^5.0.0",
     "webpack": "^5.24.3",
     "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "^3.11.2",
-    "html-webpack-plugin": "^5.3.1",
-    "typescript": "^5.0.0",
-    "svelte-preprocess": "^5.0.0",
-    "@types/single-spa": "^5.0.0",
-    "ts-loader": "^9.0.0"
+    "webpack-dev-server": "^3.11.2"
   }
 }
