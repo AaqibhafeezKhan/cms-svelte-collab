@@ -104,3 +104,18 @@
   </div>
 </div>
 
+<style>
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 1rem;
+    }
+    header h2 { font-size: 1.75rem !important; }
+    header p { font-size: 0.95rem !important; }
+    header div:last-child { display: none; }
+    .module-card { height: 500px !important; }
+    .module-card > div:first-child { padding: 1rem !important; }
+  }
+</style>
+
