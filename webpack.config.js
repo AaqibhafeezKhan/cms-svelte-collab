@@ -53,5 +53,4 @@ module.exports = {
     historyApiFallback: true,
     headers: { 'Access-Control-Allow-Origin': '*' },
   },
-  externals: process.env.NODE_ENV === 'production' ? ['svelte'] : [],
 };
